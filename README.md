@@ -59,27 +59,13 @@ If you pass in CSS selectors for `navWrapperSelector` and `navItemSelector`, the
 
 ### Updating height
 
-One of the cleanest ways to show and hide the slides in CSS is to set `position: relative; overflow: hidden;` on the slider wrapper, and then absolutely position the slides within the wrapper. However, this approach requires setting an explicit height on the wrapper, or else the wrapper height will be set to zero and the slides will be hidden.
+One of the cleanest ways to show and hide the slides in CSS is to set `position: relative; overflow: hidden;` on the slider wrapper, and then absolutely position the slides within the wrapper. However, this approach requires setting an explicit height on the wrapper, or else the wrapper height will be set to zero and the slides will be hidden. To address this, the plugin calculates the height (including margins) of the active slide, and sets this as the height of the wrapper element. 
 
-To address this, the plugin calculates the height (including margins) of the active slide, and sets this as the height of the wrapper element. The slider also listens for changes in the height of the slides (in case there's an expanding field on the slide, for example) and updates the wrapper height as needed, using the event-based [javascript-detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize) plugin (included as a dependency when using Bower).
+If `monitorHeightChanges` is set to `true`, the slider also listens for changes in the height of the slides (in case there's an expanding field on the slide, for example) and updates the wrapper height as needed, using the event-based [javascript-detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize) plugin (included as a dependency when using Bower).
 
-This behavior can be disabled by setting `monitorHeightChanges: false` in the slider options.
-
-### Slide change events
-
-By setting `eventsOnSlideChange: true` in the slider options, the plugin will dispatch custom "slideChange" events whenever a new slide becomes active. You can add an event listener to react to these events as desired. The event details include the indicies of the previously active slide and the newly active slide:
-
-```javascript
-
-detail: {
-	prevSlideIndex: 0,
-	newSlideIndex: 1
-}
-
-```
 ## Options
 
-These options can be passed into the `new JBSlider();` constructor:
+These options can be passed into the `new JBSlider()` constructor:
 
 ```javascript
 
@@ -149,9 +135,135 @@ Default: `slider__slide--next`
 
 The class that should be applied to slides that occur after the active slide. Use this to animate the slides off to the right using CSS, for example.
 
+### navWrapperSelector
+
+Type: `String`
+
+Default: `null`
+
+A CSS selector for a slider navigation wrapper element. If set to `null`, no slider nav event listeners will be created. Must be a string that can be passed into `document.querySelector();`. This should be a unique selector, otherwise only the first matching element will be used.
+
+### navItemSelector
+
+Type: `String`
+
+Default: `null`
+
+A CSS selector for the slide navigation elements.  If set to `null`, no slider nav event listeners will be created. Must be a string that can be passed into `wrapper.querySelectorAll();`.
+
+### navActiveClass
+
+Type: `String`
+
+Default: `null`
+
+A class to be applied to the slider nav element that corresponds to the active slide. Use this to style the slider nav element.
+
+TKTK see if this breaks if navItemSelector is set but this is null.
+
+### navVisitedClass
+
+Type: `String`
+
+Default: `null`
+
+A class to be applied to slider nav elements that have already been visited. Useful for showing progress through a tabbed form, for example.
+
+### navForVisitedSlidesOnly
+
+Type: `Boolean`
+
+Default: `false`
+
+If set to `true`, only slider nav elements that have the `navVisitedClass` will be able to move the slider. Useful if you only want people to be able to go back to form tabs that have already been validated, for example.
+
+### monitorHeightChanges
+
+Type: `Boolean`
+
+Default: `true`
+
+The slider sets the height of the wrapper based on the height of the active slide. This is helpful if the slides are absolutely positioned within a wrapper with `overflow: hidden;` set (see the [updating height section above](#updating-height) for more info).
+
+If this option is set to `true`, the slider will use the event-based [javascript-detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize) plugin to watch for changes in the slide's height, and update the wrapper height as needed.
+
+### eventsOnSlideChange
+
+Type: `Boolean`
+
+Default: `false`
+
+If set to `true`, the plugin will dispatch custom "slideChange" events whenever a new slide becomes active. You can add an event listener to react to these events as desired. The event details include the indicies of the previously active slide and the newly active slide:
+
+```javascript
+
+detail: {
+	prevSlideIndex: 0,
+	newSlideIndex: 1
+}
+
+```
+
 ## Public Methods
 
+### advanceSlide()
 
+Arguments: None
+
+Returns: None
+
+Moves forward one slide, provided there is a future slide.
+
+```javascript
+
+slider.retreatSlide();
+
+```
+
+### retreatSlide()
+
+Arguments: None
+
+Returns: None
+
+Moves back one slide, provided there is a previous slide.
+
+```javascript
+
+slider.retreatSlide();
+
+```
+
+### goToSlide(slide_index)
+
+Arguments: The index of the slide to go to.
+
+Returns: None
+
+Moves to the slide with the specified index (starting at zero).
+
+```javascript
+
+slider.goToSlide(1);
+
+```
+
+### Element references
+
+You can access slider elements as follows:
+
+```javascript
+
+slider.sliderWrapper; # the wrapper element
+slider.slides; # an array of slide elements
+slider.activeSlide; # the index of the current slide (starting at zero)
+slider.options; # any of the options
+
+# if navWrapperSelector and navItemSelector are both not null:
+slider.navWrapper; # the nav wrapper element
+slider.navItems; # an array of nav elements
+
+```
 
 
 
