@@ -1,5 +1,7 @@
 # jb-slider
 
+[Installation](#installation) | [Usage](#usage) | [Options](#options) | [Methods](#public-methods)
+
 A lightweight (3KB minified), vanilla javascript slider plugin. This simply adds/removes element classes as needed, letting you specify the design, animation, etc of the slides as desired with CSS.
 
 ## Installation
@@ -7,6 +9,7 @@ A lightweight (3KB minified), vanilla javascript slider plugin. This simply adds
 With Bower:
 
 ```Shell
+
 bower install jb-slider --save
 
 ```
