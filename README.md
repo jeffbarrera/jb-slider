@@ -24,13 +24,13 @@ See below for the full list of options that can be passed in, and the defaults. 
 
 ```javascript
 
-# go to the next slide
+// go to the next slide
 slider.advanceSlide();
 
-# go the the previous slide
+// go the the previous slide
 slider.retreatSlide();
 
-# go to a specific slide
+// go to a specific slide
 slider.goToSlide(1);
 
 ```
@@ -183,7 +183,7 @@ Type: `Boolean`
 
 Default: `true`
 
-The slider sets the height of the wrapper based on the height of the active slide. This is helpful if the slides are absolutely positioned within a wrapper with `overflow: hidden;` set (see the [updating height section above](#updating-height) for more info).
+The slider sets the height of the wrapper based on the height of the active slide. This is helpful if the slides are absolutely positioned within a wrapper with `overflow: hidden;` set (see the [updating height](#updating-height) section for more info).
 
 If this option is set to `true`, the slider will use the event-based [javascript-detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize) plugin to watch for changes in the slide's height, and update the wrapper height as needed.
 
@@ -254,14 +254,14 @@ You can access slider elements as follows:
 
 ```javascript
 
-slider.sliderWrapper; # the wrapper element
-slider.slides; # an array of slide elements
-slider.activeSlide; # the index of the current slide (starting at zero)
-slider.options; # any of the options
+slider.sliderWrapper; // the wrapper element
+slider.slides; // an array of slide elements
+slider.activeSlide; // the index of the current slide (starting at zero)
+slider.options; // any of the options
 
-# if navWrapperSelector and navItemSelector are both not null:
-slider.navWrapper; # the nav wrapper element
-slider.navItems; # an array of nav elements
+// if navWrapperSelector and navItemSelector are both not null:
+slider.navWrapper; // the nav wrapper element
+slider.navItems; // an array of nav elements
 
 ```
 
