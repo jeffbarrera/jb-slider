@@ -14,7 +14,7 @@
   "dependencies": {
     "classlist-polyfill": "~1.2.0",
     "javascript-detect-element-resize": "~0.5.3"
-  }
+  },
   "ignore": [
     "**/.*",
     "node_modules",
