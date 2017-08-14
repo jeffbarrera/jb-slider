@@ -39,7 +39,7 @@ slider.goToSlide(1);
 
 If you pass in CSS selectors for `navWrapperSelector` and `navItemSelector`, the slider will listen for click events on the nav items and move the slider appropriately. Use a `data-slide-step` attribute to associate the nav item with the index of the connected slide (to degrade gracefully if javascript is disabled, I recommend making the nav items links to anchor IDs on the slides). For example:
 
-```
+```html
 
 <nav class="progress-indicator" id="staged_donate_slider_nav">
   <ul>
