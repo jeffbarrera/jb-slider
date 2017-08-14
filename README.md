@@ -1,6 +1,26 @@
 # jb-slider
 
-A lightweight, vanilla javascript slider plugin. This simply adds/removes element classes as needed, letting you specify the design, animation, etc of the slides as desired with CSS.
+A lightweight (3KB minified), vanilla javascript slider plugin. This simply adds/removes element classes as needed, letting you specify the design, animation, etc of the slides as desired with CSS.
+
+## Installation
+
+With Bower:
+
+```
+
+bower install jb-slider --save
+
+```
+
+Or download manually and include jbSlider.min.js in your HTML file.
+
+### Dependencies
+
+JBSlider relies on two other packages, both specified in the `bower.json` file:
+
+- [classList.js](https://github.com/eligrey/classList.js/): classList polyfill that extends support back to IE 7. Only necessary if you care about supporting older browsers.
+
+- [javascript-detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize): a vanilla JS event-based element resize detector. Only necessary if `monitorHeightChanges: true`.
 
 ## Usage
 
@@ -158,8 +178,6 @@ Type: `String`
 Default: `null`
 
 A class to be applied to the slider nav element that corresponds to the active slide. Use this to style the slider nav element.
-
-TKTK see if this breaks if navItemSelector is set but this is null.
 
 ### navVisitedClass
 
