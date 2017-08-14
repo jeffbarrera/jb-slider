@@ -81,14 +81,75 @@ detail: {
 
 These options can be passed into the `new JBSlider();` constructor:
 
+```javascript
+
+slider = new JBSlider({
+	wrapperSelector: '.slider',
+	slideSelector: '.slider__slide',
+	activeClass: 'slider__slide--active',
+	inactiveClass: 'slider__slide--inactive',
+	prevClass: 'slider__slide--prev',
+	nextClass: 'slider__slide--next',
+	navWrapperSelector: null,
+	navItemSelector: null,
+	navActiveClass: null,
+	navVisitedClass: null,
+	navForVisitedSlidesOnly: false,
+	monitorHeightChanges: true,
+	eventsOnSlideChange: false
+});
+
+```
+
 ### wrapperSelector
 
 Type: `String`
 
-Default: `'.slider'`
+Default: `.slider`
 
-A CSS selector for the slider's wrapper element. Should be a string that can be passed into `document.querySelector();`. This should be a unique selector, otherwise only the first matching element will be used. To create multiple sliders on the same page, use two different selector.
+A CSS selector for the slider's wrapper element. Must be a string that can be passed into `document.querySelector();`. This should be a unique selector, otherwise only the first matching element will be used. To create multiple sliders on the same page, use two different selectors.
 
+### slideSelector
+
+Type: `String`
+
+Default: `.slider__slide`
+
+A CSS selector for the slide elements. Must be a string that can be passed into `sliderWrapper.querySelectorAll(); `.
+
+### activeClass
+
+Type: `String`
+
+Default: `slider__slide--active`
+
+The class that should be applied to the active slide. Style this to be visible using CSS.
+
+### inactiveClass
+
+Type: `String`
+
+Default: `slider__slide--inactive`
+
+The class that should be applied to the inactive slides. Style this to be hidden using CSS.
+
+### prevClass
+
+Type: `String`
+
+Default: `slider__slide--prev`
+
+The class that should be applied to slides that occur before the active slide. Use this to animate the slides off to the left using CSS, for example.
+
+### nextClass
+
+Type: `String`
+
+Default: `slider__slide--next`
+
+The class that should be applied to slides that occur after the active slide. Use this to animate the slides off to the right using CSS, for example.
+
+## Public Methods
 
 
 
