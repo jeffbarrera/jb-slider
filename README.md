@@ -6,8 +6,7 @@ A lightweight (3KB minified), vanilla javascript slider plugin. This simply adds
 
 With Bower:
 
-```
-
+```Shell
 bower install jb-slider --save
 
 ```
