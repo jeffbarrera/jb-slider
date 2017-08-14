@@ -1,0 +1,25 @@
+{
+  "name": "jb-slider",
+  "homepage": "https://github.com/jeffbarrera/jb-slider",
+  "authors": [
+    "Jeff Barrera (jeffbarrera.com)"
+  ],
+  "description": "Lightweight vanilla javascript slider",
+  "main": "jbSlider.js",
+  "keywords": [
+    "slider",
+    "javascript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "classlist-polyfill": "~1.2.0",
+    "javascript-detect-element-resize": "~0.5.3"
+  }
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
