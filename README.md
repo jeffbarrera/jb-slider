@@ -20,7 +20,7 @@ slider = new JBSlider({
 
 See below for the full list of options that can be passed in, and the defaults. Multiple sliders can be used on the same page provided they each have a different `wrapperSelector` and (if used) `navWrapperSelector`.
 
-### Public Methods
+### Moving the slider
 
 ```javascript
 
@@ -63,11 +63,11 @@ One of the cleanest ways to show and hide the slides in CSS is to set `position:
 
 To address this, the plugin calculates the height (including margins) of the active slide, and sets this as the height of the wrapper element. The slider also listens for changes in the height of the slides (in case there's an expanding field on the slide, for example) and updates the wrapper height as needed, using the event-based [javascript-detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize) plugin (included as a dependency when using Bower).
 
-This behavior can be disable by setting `monitorHeightChanges: false` in the slider options.
+This behavior can be disabled by setting `monitorHeightChanges: false` in the slider options.
 
 ### Slide change events
 
-By setting `eventsOnSlideChange: true` in the slider options, the plugin will dispatch custom "slideChange" events whenever a new slide becomes active. You can add an event listener to react to these events as desired. The event details include the indicies of the previously active slide, and the newly active slide:
+By setting `eventsOnSlideChange: true` in the slider options, the plugin will dispatch custom "slideChange" events whenever a new slide becomes active. You can add an event listener to react to these events as desired. The event details include the indicies of the previously active slide and the newly active slide:
 
 ```javascript
 
@@ -77,3 +77,31 @@ detail: {
 }
 
 ```
+## Options
+
+These options can be passed into the `new JBSlider();` constructor:
+
+### wrapperSelector
+
+Type: `String`
+
+Default: `'.slider'`
+
+A CSS selector for the slider's wrapper element. Should be a string that can be passed into `document.querySelector();`. This should be a unique selector, otherwise only the first matching element will be used. To create multiple sliders on the same page, use two different selector.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
