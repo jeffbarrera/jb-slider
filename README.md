@@ -26,7 +26,7 @@ Or download manually and include jbSlider.min.js in your HTML file.
 
 ### Dependencies
 
-JBSlider relies on two other packages, both specified in the `bower.json` file:
+JBSlider relies on two other packages, both specified in `package.json`:
 
 - [classList.js](https://github.com/eligrey/classList.js/): classList polyfill that extends support back to IE 7. Only necessary if you care about supporting older browsers.
 

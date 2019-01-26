@@ -1,8 +1,12 @@
 {
   "name": "@jeffbarrera/jbslider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight, vanilla-JS slider plugin",
   "license": "MIT",
   "repository": "jeffbarrera/jb-slider",
-  "main": "jbSlider.js"
+  "main": "jbSlider.js",
+  "dependencies": {
+    "classlist.js": "^1.1.20150312",
+    "javascript-detect-element-resize": "^0.5.3"
+  }
 }
