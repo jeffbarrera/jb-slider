@@ -1,0 +1,8 @@
+{
+  "name": "@jeffbarrera/jbslider",
+  "version": "1.0.0",
+  "description": "Lightweight, vanilla-JS slider plugin",
+  "license": "MIT",
+  "repository": "jeffbarrera/jb-slider",
+  "main": "jbSlider.js"
+}

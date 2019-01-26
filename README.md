@@ -6,6 +6,14 @@ A lightweight (3KB minified), vanilla javascript slider plugin. This simply adds
 
 ## Installation
 
+With NPM:
+
+```Shell
+
+npm i @jeffbarrera/jbmodal
+
+```
+
 With Bower:
 
 ```Shell
