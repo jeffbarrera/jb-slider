@@ -10,7 +10,7 @@ With NPM:
 
 ```Shell
 
-npm i @jeffbarrera/jbmodal
+npm i @jeffbarrera/jbslider
 
 ```
 
